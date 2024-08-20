@@ -22,6 +22,13 @@ output "Eth0ElasticIp" {
 	}
 }
 
+output "IamRole" {
+	description = "Role resource associated with the EC2 instance."
+	value = {
+		"name" : aws_iam_role.IamRole.name
+	}
+}
+
 output "Instance" {
 	description = "Instance resource associated with the EC2 instance."
 	value = {
