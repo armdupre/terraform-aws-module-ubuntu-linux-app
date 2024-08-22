@@ -16,6 +16,7 @@ resource "aws_instance" "Instance" {
 		device_index = "0"
 	}
 	root_block_device {
+		volume_size = local.InstanceEbsVolumeSize
 		delete_on_termination = local.InstanceEbsDeleteOnTermination
 		volume_type = local.InstanceEbsVolumeType
 	}
