@@ -57,6 +57,11 @@ InstanceType must be one of the following types:
 	}
 }
 
+variable "InstanceEbsVolumeSize" {
+	default = "32"
+	type = string
+}
+
 variable "SleepDelay" {
 	default = "7m"
 	description = "Time duration to delay to allow application to perform internal initialization required before use"

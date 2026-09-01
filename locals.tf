@@ -9,7 +9,7 @@ locals {
 	IamRoleName = "${local.Preamble}-iam-role-${local.Region}"
 	InstanceDisableApiTermination = false
 	InstanceEbsDeleteOnTermination = true
-	InstanceEbsVolumeSize = "32"
+	InstanceEbsVolumeSize = var.InstanceEbsVolumeSize
 	InstanceEbsVolumeType = "gp2"
 	InstanceId = var.InstanceId
 	InstanceInstanceInitiatedShutdownBehavior = "stop"
@@ -18,7 +18,7 @@ locals {
 	InstanceType = var.InstanceType
 	InterfaceSourceDestCheck = false
 	Preamble = "${local.UserLoginTag}-${local.UserProjectTag}-${local.Tag}-${local.InstanceId}-${local.Version}"
-	Region = data.aws_region.current.name
+	Region = data.aws_region.current.region
 	SleepDelay = var.SleepDelay
 	Tag = var.Tag
 	UserEmailTag = var.UserEmailTag
