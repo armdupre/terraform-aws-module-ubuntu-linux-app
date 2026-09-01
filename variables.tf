@@ -1,5 +1,5 @@
 variable "AmiName" {
-	default = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230516"
+	default = "ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260610"
 	description = "AMI name used for deploying instances"
 	type = string
 }
@@ -96,7 +96,7 @@ variable "UserProjectTag" {
 }
 
 variable "Version" {
-	default = "2204-lts"
+	default = "2404-lts"
 	description = "Versioning of the application using the deployment"
 	type = string
 }
