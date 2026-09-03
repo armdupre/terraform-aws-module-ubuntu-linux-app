@@ -4,7 +4,7 @@ resource "aws_instance" "Instance" {
 	ami = data.aws_ami.Ami.image_id
 	instance_type = local.InstanceType
 	monitoring = local.InstanceMonitoring
-	iam_instance_profile = aws_iam_instance_profile.IamInstanceProfile.id
+	iam_instance_profile = local.IamInstanceProfileId
 	tags = {
 		Name = local.InstanceName
 		Owner = local.UserEmailTag
@@ -23,6 +23,9 @@ resource "aws_instance" "Instance" {
 		create = "9m"
 		delete = "5m"
 	}
+	depends_on = [
+		aws_iam_instance_profile.IamInstanceProfile
+	]
 }
 
 resource "aws_network_interface" "Eth0" {

@@ -4,6 +4,7 @@ locals {
 	Eth0Name = "${local.Preamble}-eth0-${local.Region}"
 	Eth0SecurityGroupId = var.Eth0SecurityGroupId
 	Eth0SubnetId = var.Eth0SubnetId
+	IamInstanceProfileId = var.IamInstanceProfileId == null ? aws_iam_instance_profile.IamInstanceProfile.id : var.IamInstanceProfileId 
 	IamInstanceProfileName = "${local.Preamble}-iam-instance-profile-${local.Region}"
 	IamPolicyName = "${local.Preamble}-iam-policy-${local.Region}"
 	IamRoleName = "${local.Preamble}-iam-role-${local.Region}"

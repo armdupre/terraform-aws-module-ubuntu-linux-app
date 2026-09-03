@@ -20,6 +20,11 @@ variable "Eth0SubnetId" {
 	type = string
 }
 
+variable "IamInstanceProfileId" {
+	default = null
+	type = string
+}
+
 variable "InstanceId" {
 	default = "app"
 	description = "Id of the instance of this module that ensures uniqueness"
